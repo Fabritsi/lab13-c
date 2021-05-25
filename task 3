@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _13_Лабораторна
+{
+    class TCube:TSquare
+    {
+        private double L1 { get; set; }
+        private double L2 { get; set; }
+        
+        public TCube(string s1, string s2)
+        {
+            if (s1 == "")
+            {
+                L1 = 1;
+            }
+            else L1 = Convert.ToDouble(s1);
+
+            if (s2 == "")
+            {
+                L2 = 1;
+            }
+            else L2 = Convert.ToDouble(s2);
+        }
+        public double[] V()
+        {
+            double[] arr = new double[2];
+            arr[0] = Math.Pow(L1, 3);
+            arr[1] = Math.Pow(L2, 3);
+
+            return arr;
+        }
+        public double[] Scube()
+        {
+            double[] arr = new double[2];
+            arr[0] = 6 * Math.Pow(L1, 2);
+            arr[1] = 6 * Math.Pow(L2, 2);
+
+            return arr;
+        }
+
+        public double[] Pcube()
+        {
+            double[] arr = new double[2];
+            arr[0] = L1 * 12;
+            arr[1] = L2 * 12;
+
+            return arr;
+        }
+    }
+}
